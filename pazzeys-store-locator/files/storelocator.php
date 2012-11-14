@@ -1,11 +1,13 @@
 <?php 
 //Generate Store Locator page 
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html >
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>Find a Parish</title>
+	<link rel='stylesheet' type='text/css' media='all' href='http://dev.episcopal-diocese-fort-worth.org/wp-content/themes/edfw-theme/bootstrap/css/bootstrap.css' />
+<link rel='stylesheet' type='text/css' media='all' href='http://dev.episcopal-diocese-fort-worth.org/wp-content/themes/edfw-theme/bootstrap/css/bootstrap-responsive.css' />
 	<link rel='stylesheet' href='style.css' type='text/css' media='all' />
 	<?php $height = $_GET['height']; 
 		  $height = $height - 200; ?>
