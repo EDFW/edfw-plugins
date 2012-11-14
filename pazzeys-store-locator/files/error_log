@@ -1,6 +1,0 @@
-[23-Oct-2012 01:12:37] PHP Warning:  usort() [<a href='function.usort'>function.usort</a>]: The argument should be an array in /home5/episcop9/public_html/edfwdev/wp-content/plugins/pazzeys-store-locator/files/xmlmap.php on line 59
-[23-Oct-2012 01:12:37] PHP Warning:  Invalid argument supplied for foreach() in /home5/episcop9/public_html/edfwdev/wp-content/plugins/pazzeys-store-locator/files/xmlmap.php on line 62
-[23-Oct-2012 01:12:43] PHP Warning:  usort() [<a href='function.usort'>function.usort</a>]: The argument should be an array in /home5/episcop9/public_html/edfwdev/wp-content/plugins/pazzeys-store-locator/files/xmlmap.php on line 59
-[23-Oct-2012 01:12:43] PHP Warning:  Invalid argument supplied for foreach() in /home5/episcop9/public_html/edfwdev/wp-content/plugins/pazzeys-store-locator/files/xmlmap.php on line 62
-[26-Oct-2012 03:18:42] PHP Warning:  usort() [<a href='function.usort'>function.usort</a>]: The argument should be an array in /home5/episcop9/public_html/edfwdev/wp-content/plugins/pazzeys-store-locator/files/xmlmap.php on line 59
-[26-Oct-2012 03:18:42] PHP Warning:  Invalid argument supplied for foreach() in /home5/episcop9/public_html/edfwdev/wp-content/plugins/pazzeys-store-locator/files/xmlmap.php on line 62
