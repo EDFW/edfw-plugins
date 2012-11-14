@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <title>Pazzey's Store Locator</title>
+    <title>Find a Parish</title>
 	<link rel='stylesheet' href='style.css' type='text/css' media='all' />
 	<?php $height = $_GET['height']; 
 		  $height = $height - 200; ?>
@@ -151,14 +151,19 @@ function myclick(i) {
 <body style="margin:0px; padding:0px;" onload="load()" class="storelocator"> 
   <div class="storewrap">
 			<div>
-			 <label>Enter Postal/Zip Code or City and Province/State: </label>
-			 <input type="text" id="addressInput" size="30"/><br />
-		<label>Within:</label><select id="radiusSelect">
-			  <option value="25" selected>25 miles</option>
-			  <option value="100">100 miles</option>
-			  <option value="200">200 miles</option>
-			</select><br />
-			<input type="button" onclick="searchLocations()" value="Search"/>
+			<form>
+				
+					<label>Enter Postal/Zip Code or City and Province/State:</label>
+						<input type="text" id="addressInput" size="30"/><br />
+					<label>Within:</label>
+						<select id="radiusSelect">
+							<option value="25" selected>25 miles</option>
+							<option value="100">100 miles</option>
+							<option value="200">200 miles</option>
+						</select><br />
+					<input class="btn" type="button" onclick="searchLocations()" value="Search"/>
+				
+			</form>
 			</div>
 			<div><select id="locationSelect" style="width:100%;visibility:hidden"></select></div>
 		<table border="0" bordercolor="" style="background-color:" width="100%" cellpadding="0" cellspacing="0">

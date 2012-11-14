@@ -1,6 +1,6 @@
 <?php 
 /*
-Plugin Name: Pazzey's Store Locator 
+Plugin Name: Pazzey's Church Locator
 Plugin URI: http://www.crispuno.ca/?p=250
 Description: Store Locator Plugin that lets you embed a Google Maps powered store locator. To embed the store locator, use the following shortcut: [storelocator] . To specify width and height [storelocator width="500" height="500"]
 Version: 1.2
@@ -12,22 +12,22 @@ Author URI: http://crispuno.ca
 
 
 //Create Post Type
-add_action( 'init', 'create_store_post_type');
+add_action( 'init', 'create_group_post_type');
 
-function create_store_post_type() {
-	register_post_type( 'pazzey_store',
+function create_group_post_type() {
+	register_post_type( 'group',
 		array(
 			'labels' => array(
-				'name' => __( 'Stores' ),
-				'singular_name' => __( 'Store' ),
-				'add_new' => __( 'Add New Store' ),
-				'add_new_item' => __( 'Add Store' ),
+				'name' => __( 'Groups' ),
+				'singular_name' => __( 'Group' ),
+				'add_new' => __( 'Add New Group' ),
+				'add_new_item' => __( 'Add Group' ),
 				'edit' => __( 'Edit' ),
-				'edit_item' => __( 'Edit Store' ),
-				'new_item' => __( 'New Store' ),
+				'edit_item' => __( 'Edit Group' ),
+				'new_item' => __( 'New Group' ),
 				'view' => __( 'View Store' ),
-				'view_item' => __( 'View Store' ),
-				'search_items' => __( 'Search Stores' ),
+				'view_item' => __( 'View Group' ),
+				'search_items' => __( 'Search Group' ),
 				'not_found' => __( 'No Stores found' ),
 				'not_found_in_trash' => __( 'No Stores found in Trash' ),
 				'parent' => __( 'Parent Store' ),
@@ -35,12 +35,12 @@ function create_store_post_type() {
 			),
 			'public' => true,
 			'show_ui' => true,
-			'publicly_queryable' => truew,
-			'exclude_from_search' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
 			'menu_position' => 20,
-			'hierarchical' => true,
+			'hierarchical' => false,
 			'query_var' => true,
-			'supports' => array( 'title', 'editor', 'excerpt','thumbnail','page-attributes' ),
+			'supports' => array( 'title', 'editor', 'excerpt','thumbnail','page-attributes', 'revisions' ),
 		)
 	);
 	flush_rewrite_rules( false );
@@ -54,9 +54,9 @@ add_action( 'save_post', 'pazzey_save_postdata' );
 function pazzey_add_location_box() {
     add_meta_box( 
         'pazzey_sectionid',
-        __( 'Store Location', 'pazzey_textdomain' ),
+        __( 'Physical Location - FOR WORSHIPPING CONGREGATIONS ONLY!', 'pazzey_textdomain' ),
         'pazzey_inner_custom_box',
-        'pazzey_store' 
+        'group' 
 		,'normal'
         ,'high'
     );

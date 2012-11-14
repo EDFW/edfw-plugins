@@ -19,7 +19,7 @@ require('../../../../wp-load.php' );
 			LEFT JOIN $wpdb->postmeta AS $restriction1 ON($wpdb->posts.ID = $restriction1.post_id AND $restriction1.meta_key = '$restriction1')
 			LEFT JOIN $wpdb->postmeta AS $restriction2 ON($wpdb->posts.ID = $restriction2.post_id AND $restriction2.meta_key = '$restriction2')
 			LEFT JOIN $wpdb->postmeta AS $restriction3 ON($wpdb->posts.ID = $restriction3.post_id AND $restriction3.meta_key = '$restriction3')";
-			$sql .="WHERE $wpdb->posts.post_type = 'pazzey_store' AND $wpdb->posts.post_status = 'publish' ";
+			$sql .="WHERE $wpdb->posts.post_type = 'group' AND $wpdb->posts.post_status = 'publish' ";
 	//echo $sql;
 	$storequery = $wpdb->get_results( $sql);
 	$earth_radius = 3960.00; // in miles
