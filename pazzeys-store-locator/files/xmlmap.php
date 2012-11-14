@@ -29,12 +29,12 @@ require('../../../../wp-load.php' );
 	{		
 			$id = $store->ID;
 			$name = $store->post_title;
+			$link = home_url() . '/group/' . $store->post_name;
 			$street = get_post_meta($id, 'pazzey_address',true);
 			$city = get_post_meta($id, 'pazzey_city',true);
 			$province = get_post_meta($id, 'pazzey_state',true);
-			$country = get_post_meta($id, 'pazzey_country',true);
 			$zip = get_post_meta($id, 'pazzey_postal',true);
-			$address = $street.',<br /> '.$city.', '.$province.'<br /> '.$zip.' '.$country;
+			$address = $street.',<br /> '.$city.', '.$province.' '.$zip.' ';
 			$moreinfo = $store->post_content;
 			$lat = get_post_meta($id, 'pazzey_lat',true);
 			$lng = get_post_meta($id, 'pazzey_lng',true);
@@ -48,7 +48,7 @@ require('../../../../wp-load.php' );
 			$distance = round($distance, 4);
 			  //echo $central_lat;
 			if ($distance < $radius) {
-			$locations[] = array ('name'=>$name,'address'=>$address,'lat'=>$lat,'lng'=>$lng,'distance'=>$distance,'moreinfo'=>$moreinfo);
+			$locations[] = array ('name'=>$name,'address'=>$address,'lat'=>$lat,'lng'=>$lng,'distance'=>$distance,'moreinfo'=>$moreinfo, 'link'=>$link);
 			}
 	}
 	

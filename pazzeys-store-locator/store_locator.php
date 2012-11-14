@@ -216,7 +216,7 @@ function showstorelocator_shortcode( $atts ) {
 		'height' => '500',
 	), $atts));
 
-$storecode ='<iframe name="storelocator" src ="'.get_bloginfo('wpurl').'/wp-content/plugins/pazzeys-store-locator/files/storelocator.php?height='.$height.'" width="'.$width.'px" height="'.$height.'px" scrolling="no" FRAMEBORDER="0" ></iframe>';
+$storecode ='<iframe id="locator-frame" name="storelocator" src ="'.get_bloginfo('wpurl').'/wp-content/plugins/pazzeys-store-locator/files/storelocator.php?height='.$height.'" width="'.$width.'px" height="'.$height.'px" scrolling="no" FRAMEBORDER="0" ></iframe>';
 		
 	return $storecode;
 }

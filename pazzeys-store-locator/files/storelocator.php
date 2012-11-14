@@ -13,7 +13,22 @@
 		  $height = $height - 200; ?>
     <script src="http://maps.google.com/maps/api/js?sensor=false"
             type="text/javascript"></script>
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"
+            type="text/javascript"></script>
     <script type="text/javascript">
+    jQuery(document).ready(function () {
+		var adjustHeight = function() {
+			var frame = $('#locator-frame', window.parent.document);
+			var height = jQuery(".storelocator").height();
+			frame.height(height + 15);
+		}
+		adjustHeight();
+    });
+	</script>
+	
+	
+	
+	<script type="text/javascript">
     //<![CDATA[
     var map;
     var markers = [];
@@ -73,12 +88,13 @@
          var address = markerNodes[i].getAttribute("address");
          var distance = parseFloat(markerNodes[i].getAttribute("distance"));
 		 var moreinfo = markerNodes[i].getAttribute("moreinfo");
+		 var link = markerNodes[i].getAttribute("link");
          var latlng = new google.maps.LatLng(
               parseFloat(markerNodes[i].getAttribute("lat")),
               parseFloat(markerNodes[i].getAttribute("lng")));
 
          createOption(name, distance, i);
-         createMarker(latlng, name, address, moreinfo);
+         createMarker(latlng, name, address, moreinfo, link);
          bounds.extend(latlng);
        }
        map.fitBounds(bounds);
@@ -89,9 +105,9 @@
       });
     }
   
-    function createMarker(latlng, name, address, moreinfo) {
+    function createMarker(latlng, name, address, moreinfo, link) {
 	  
-      var html = "<b>" + name + "</b> <br/>" + address + "<br/>" + moreinfo;
+      var html = "<b><a href='" + link + "' target='_parent'>" + name + "</a></b> <br/>" + address + "<br/>" + moreinfo + "<br/><br/><a href='" + link + "' target='_parent'>Learn more about " + name + "</a><br/><br/>";
 	  var cleanaddy = address.replace(/<\/?[^>]+(>|$)/g, "");
 	  html +='<form action="http://maps.google.com/maps" method="get"" target="_blank">'+
            '<INPUT value="Get Directions" TYPE="SUBMIT">' +
